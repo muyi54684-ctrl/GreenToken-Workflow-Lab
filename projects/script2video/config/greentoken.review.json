@@ -1,0 +1,8 @@
+{
+  "protocol_version": "greentoken.review/v1",
+  "policy_id": "storyboard-review-explicit",
+  "policy_version": "0.1.0",
+  "reason": "Stage 2: no optimized execution is enabled.",
+  "capabilities": {},
+  "optimized": {}
+}

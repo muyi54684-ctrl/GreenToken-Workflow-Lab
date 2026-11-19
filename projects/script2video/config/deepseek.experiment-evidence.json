@@ -1,0 +1,25 @@
+{
+  "version": "deepseek-review-capabilities-20261117-v1",
+  "checked_at": "2026-11-17",
+  "model": "deepseek-v4-pro",
+  "documented_model_version": "DeepSeek-V4-Pro-0813",
+  "thinking_default_documented": "enabled",
+  "effort_default_documented": "high",
+  "supported_efforts": ["low", "high", "max"],
+  "experiment_effort": "low",
+  "temperature_effect": "ignored_in_thinking_mode",
+  "sources": ["https://api-docs.deepseek.com/guides/thinking_mode/", "https://api-docs.deepseek.com/api/create-chat-completion/"],
+  "pricing": {
+    "version": "deepseek-20261117-usd-peak-reference-v1",
+    "currency": "USD",
+    "policy": "fixed_peak_reference_not_actual_bill",
+    "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "checked_at": "2026-11-17",
+    "model": "deepseek-v4-pro",
+    "peak": {"input_cached_per_million": 0.044, "input_uncached_per_million": 1.32, "output_per_million": 3.96},
+    "off_peak": {"input_cached_per_million": 0.022, "input_uncached_per_million": 0.66, "output_per_million": 1.98},
+    "peak_schedule": "Mon-Fri excluding Chinese public holidays, 01:00-04:00 and 06:00-10:00 UTC",
+    "missing_cache_usage": "unavailable",
+    "output_includes_reasoning": true
+  }
+}
