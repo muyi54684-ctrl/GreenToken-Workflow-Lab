@@ -1,0 +1,550 @@
+{
+  "version": "greentoken-showcase/v1",
+  "date": "2026-11-18",
+  "mode": "historical_replay",
+  "model": "deepseek-v4-pro",
+  "comparison": "historical_same_D_not_randomized_pair",
+  "sourceCommit": "f159d6c2e16d1f59025c1f63499390e75c2a9c77",
+  "script": "一个女孩在雨夜走在校园里。她收到一条陌生短信，停下来查看。短信让她露出惊讶的表情。她望向远处，然后快步离开。",
+  "priceVersion": "deepseek-20261117-usd-peak-reference-v1",
+  "price": {
+    "currency": "USD",
+    "inputMissPerMillion": 1.32,
+    "inputHitPerMillion": 0.044,
+    "outputPerMillion": 3.96
+  },
+  "hashes": {
+    "d": "08c2f6c07cde19607ed7336288989667c79ff6754305a7afa80c5f805b6fd418",
+    "d_file": "b095e1b2819b023793b5b30f2f301ab54fbaa0aa12459c8f55716463c9e32135",
+    "script": "2ce70586d768aa4a4f38ddb32633b5734c0e217bd7ee8ecfd6833781d3fd23cc",
+    "prompt": "8df9757e038e16dd129af3d8340ff2c48b9dea9a2b9ff3aa99790dca7b2da3a6",
+    "schema": "116e7319794d93957b98c6736bdcdf77d042225b9e2e1e377254b58a44b9d6e8"
+  },
+  "draft": {
+    "duration": 22,
+    "hash": "08c2f6c07cde19607ed7336288989667c79ff6754305a7afa80c5f805b6fd418",
+    "shots": [
+      {
+        "index": 1,
+        "durationSec": 4,
+        "summary": "The young woman walks alone under a clear umbrella along a wet campus pathway on a rainy night.",
+        "camera": "Medium tracking shot moving backward, eye level, slow smooth motion",
+        "dialogue": [
+          {
+            "speaker": "Girl",
+            "line": "It is freezing tonight."
+          }
+        ],
+        "subtitle": "It is freezing tonight."
+      },
+      {
+        "index": 2,
+        "durationSec": 6,
+        "summary": "Macro view of her smartphone screen buzzing with a sinister message from an unknown number.",
+        "camera": "Macro close-up, static camera with shallow focus racked to phone screen",
+        "dialogue": [
+          {
+            "speaker": "Girl",
+            "line": "Wait, who sent this?"
+          }
+        ],
+        "subtitle": "Wait, who sent this?"
+      },
+      {
+        "index": 3,
+        "durationSec": 4,
+        "summary": "Close-up of her face as cold realization and pure shock take over her expression.",
+        "camera": "Close-up, slow subtle push-in, low angle looking slightly up",
+        "dialogue": [
+          {
+            "speaker": "Girl",
+            "line": "How could anyone know?"
+          }
+        ],
+        "subtitle": "How could anyone know?"
+      },
+      {
+        "index": 4,
+        "durationSec": 8,
+        "summary": "She peers into the foggy distance, then abruptly turns and rushes away into the rain.",
+        "camera": "Medium-wide shot, slight pan and smooth lateral tracking following her sudden departure",
+        "dialogue": [
+          {
+            "speaker": "Girl",
+            "line": "I need to get out of here right now."
+          }
+        ],
+        "subtitle": "I need to get out of here right now."
+      }
+    ]
+  },
+  "quality": [
+    {
+      "id": "plot_dialogue",
+      "D": 3,
+      "baseline_F": 2,
+      "optimized_F": 3,
+      "evidence": "Optimized 第3镜保留惊讶、望远、转身快走；四句对白按原序保留。Baseline 结尾改为空景。"
+    },
+    {
+      "id": "character_actions",
+      "D": 3,
+      "baseline_F": 1,
+      "optimized_F": 3,
+      "evidence": "Optimized 恢复可见人物行动；但收到短信后明确停下查看仍主要靠特写暗示。"
+    },
+    {
+      "id": "shot_subject_expression",
+      "D": 4,
+      "baseline_F": 2,
+      "optimized_F": 3,
+      "evidence": "Optimized 人物仍是结尾主体；合并为8秒连续镜头，表情特写转广景及动作编排比D更紧凑，未验证实际视频。"
+    },
+    {
+      "id": "scene_prop_continuity",
+      "D": 3,
+      "baseline_F": 3,
+      "optimized_F": 3,
+      "evidence": "人物、校园、雨伞与手机保持一致；手部道具调度仍未细化。"
+    },
+    {
+      "id": "duration_structure",
+      "D": 3,
+      "baseline_F": 3,
+      "optimized_F": 3,
+      "evidence": "Optimized 为4/4/8秒、总16秒，允许值与求和正确；13个英文单词口播估算能容纳，但动作节奏仍待视频验证。"
+    },
+    {
+      "id": "veo_prompt_executability",
+      "D": 2,
+      "baseline_F": 2,
+      "optimized_F": 2,
+      "evidence": "Optimized 仍要求对白接近片尾结束，同时绝对静音且保留雨声/脚步/城市hum字段；声轨时段与尾部留白要求冲突。"
+    },
+    {
+      "id": "unnecessary_new_information",
+      "D": 2,
+      "baseline_F": 2,
+      "optimized_F": 2,
+      "evidence": "两稿均沿用D添加的具体短信、四句对白及恐慌解读；原剧本未给这些内容。"
+    }
+  ],
+  "runs": {
+    "baseline": {
+      "label": "Baseline",
+      "kind": "real_api_record",
+      "calls": 1,
+      "retries": 0,
+      "generationExecuted": false,
+      "metrics": {
+        "input_tokens": 2534,
+        "output_tokens": 13157,
+        "reasoning_tokens": 11413,
+        "total_tokens": 15691,
+        "reference_cost_usd": 0.052343368,
+        "latency_ms": 142717.8445
+      },
+      "parameters": {
+        "model": "deepseek-v4-pro",
+        "temperature": 0.7,
+        "response_format": {
+          "type": "json_object"
+        },
+        "stream": false
+      },
+      "usage": {
+        "prompt_tokens": 2534,
+        "completion_tokens": 13157,
+        "total_tokens": 15691,
+        "prompt_tokens_details": {
+          "cached_tokens": 2432
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 11413
+        },
+        "prompt_cache_hit_tokens": 2432,
+        "prompt_cache_miss_tokens": 102
+      },
+      "strategy": "original-deepseek-review",
+      "strategyVersion": "1.0.0",
+      "callId": "e811194a-084f-4565-8673-1cf126b64d12",
+      "recordHash": "3fe2063f713ef955a5eba6208a01e46583fbfb3c476ed6a66020a6f1dc92f220",
+      "startedAt": "2026-11-18T05:21:14.216Z",
+      "httpStatus": 200,
+      "finishReason": "stop",
+      "parseStatus": "succeeded",
+      "structureStatus": "valid",
+      "adopted": true,
+      "finalSource": "review",
+      "snapshots": {
+        "R": {
+          "duration": 18,
+          "hash": "3e8e71299fac1ba8c92ef08425c3fa433e45d1564977aa4dcf959248ccf50a8a",
+          "shots": [
+            {
+              "index": 1,
+              "durationSec": 4,
+              "summary": "The young woman walks alone under a clear umbrella along a wet campus pathway on a rainy night.",
+              "camera": "Medium tracking shot moving backward, eye level, slow smooth motion",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "It is freezing tonight."
+                }
+              ],
+              "subtitle": "It is freezing tonight."
+            },
+            {
+              "index": 2,
+              "durationSec": 4,
+              "summary": "Macro view of her smartphone screen buzzing with a sinister message from an unknown number.",
+              "camera": "Macro close-up, static camera with shallow focus racked to phone screen",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "Wait, who sent this?"
+                }
+              ],
+              "subtitle": "Wait, who sent this?"
+            },
+            {
+              "index": 3,
+              "durationSec": 4,
+              "summary": "Close-up of her face as cold realization and pure shock take over her expression.",
+              "camera": "Close-up, slow subtle push-in, low angle looking slightly up",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "How could anyone know?"
+                }
+              ],
+              "subtitle": "How could anyone know?"
+            },
+            {
+              "index": 4,
+              "durationSec": 6,
+              "summary": "The empty rain-soaked campus path and glowing lampposts as her hurried footsteps splash into the night; she is not seen.",
+              "camera": "Wide shot, slow backward dolly",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "I need to get out of here right now."
+                }
+              ],
+              "subtitle": "I need to get out of here right now."
+            }
+          ]
+        },
+        "F": {
+          "duration": 18,
+          "hash": "3e8e71299fac1ba8c92ef08425c3fa433e45d1564977aa4dcf959248ccf50a8a",
+          "shots": [
+            {
+              "index": 1,
+              "durationSec": 4,
+              "summary": "The young woman walks alone under a clear umbrella along a wet campus pathway on a rainy night.",
+              "camera": "Medium tracking shot moving backward, eye level, slow smooth motion",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "It is freezing tonight."
+                }
+              ],
+              "subtitle": "It is freezing tonight."
+            },
+            {
+              "index": 2,
+              "durationSec": 4,
+              "summary": "Macro view of her smartphone screen buzzing with a sinister message from an unknown number.",
+              "camera": "Macro close-up, static camera with shallow focus racked to phone screen",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "Wait, who sent this?"
+                }
+              ],
+              "subtitle": "Wait, who sent this?"
+            },
+            {
+              "index": 3,
+              "durationSec": 4,
+              "summary": "Close-up of her face as cold realization and pure shock take over her expression.",
+              "camera": "Close-up, slow subtle push-in, low angle looking slightly up",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "How could anyone know?"
+                }
+              ],
+              "subtitle": "How could anyone know?"
+            },
+            {
+              "index": 4,
+              "durationSec": 6,
+              "summary": "The empty rain-soaked campus path and glowing lampposts as her hurried footsteps splash into the night; she is not seen.",
+              "camera": "Wide shot, slow backward dolly",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "I need to get out of here right now."
+                }
+              ],
+              "subtitle": "I need to get out of here right now."
+            }
+          ]
+        }
+      }
+    },
+    "low": {
+      "label": "Optimized · low",
+      "kind": "real_api_record",
+      "calls": 1,
+      "retries": 0,
+      "generationExecuted": false,
+      "metrics": {
+        "input_tokens": 2455,
+        "output_tokens": 6996,
+        "reasoning_tokens": 5452,
+        "total_tokens": 9451,
+        "reference_cost_usd": 0.03094476,
+        "latency_ms": 96500.1569
+      },
+      "parameters": {
+        "model": "deepseek-v4-pro",
+        "temperature": 0.7,
+        "response_format": {
+          "type": "json_object"
+        },
+        "stream": false,
+        "reasoning_effort": "low"
+      },
+      "usage": {
+        "prompt_tokens": 2455,
+        "completion_tokens": 6996,
+        "total_tokens": 9451,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5452
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2455
+      },
+      "strategy": "deepseek-review-effort-only",
+      "strategyVersion": "1.0.0",
+      "callId": "248d9913-bda7-456b-a614-66061be72ce7",
+      "recordHash": "a2e094650570fa898628a379ca903fb4fb9decb2feb62f0a97b7fb78df65713c",
+      "startedAt": "2026-11-18T06:25:04.392Z",
+      "httpStatus": 200,
+      "finishReason": "stop",
+      "parseStatus": "succeeded",
+      "structureStatus": "valid",
+      "adopted": true,
+      "finalSource": "review",
+      "snapshots": {
+        "R": {
+          "duration": 16,
+          "hash": "8164c557ce61e6db97201ebb34156560c1a245f2b46fd76a090523c30575396b",
+          "shots": [
+            {
+              "index": 1,
+              "durationSec": 4,
+              "summary": "The young woman walks alone under a clear umbrella along a wet campus pathway on a rainy night.",
+              "camera": "Medium tracking shot moving backward, eye level, slow smooth motion",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "It is freezing tonight."
+                }
+              ],
+              "subtitle": "It is freezing tonight."
+            },
+            {
+              "index": 2,
+              "durationSec": 4,
+              "summary": "Macro view of her smartphone screen buzzing with a sinister message from an unknown number.",
+              "camera": "Macro close-up, static camera with shallow focus racked to phone screen",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "Wait, who sent this?"
+                }
+              ],
+              "subtitle": "Wait, who sent this?"
+            },
+            {
+              "index": 3,
+              "durationSec": 8,
+              "summary": "Close-up of her face as realization hits, then she pulls back to see the empty quad, turns and rushes away into the rain.",
+              "camera": "Close-up transitioning to medium-wide, slight pan and smooth lateral tracking, pull back as she moves away",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "How could anyone know?"
+                },
+                {
+                  "speaker": "Girl",
+                  "line": "I need to get out of here right now."
+                }
+              ],
+              "subtitle": "How could anyone know? I need to get out of here right now."
+            }
+          ]
+        },
+        "F": {
+          "duration": 16,
+          "hash": "8164c557ce61e6db97201ebb34156560c1a245f2b46fd76a090523c30575396b",
+          "shots": [
+            {
+              "index": 1,
+              "durationSec": 4,
+              "summary": "The young woman walks alone under a clear umbrella along a wet campus pathway on a rainy night.",
+              "camera": "Medium tracking shot moving backward, eye level, slow smooth motion",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "It is freezing tonight."
+                }
+              ],
+              "subtitle": "It is freezing tonight."
+            },
+            {
+              "index": 2,
+              "durationSec": 4,
+              "summary": "Macro view of her smartphone screen buzzing with a sinister message from an unknown number.",
+              "camera": "Macro close-up, static camera with shallow focus racked to phone screen",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "Wait, who sent this?"
+                }
+              ],
+              "subtitle": "Wait, who sent this?"
+            },
+            {
+              "index": 3,
+              "durationSec": 8,
+              "summary": "Close-up of her face as realization hits, then she pulls back to see the empty quad, turns and rushes away into the rain.",
+              "camera": "Close-up transitioning to medium-wide, slight pan and smooth lateral tracking, pull back as she moves away",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "How could anyone know?"
+                },
+                {
+                  "speaker": "Girl",
+                  "line": "I need to get out of here right now."
+                }
+              ],
+              "subtitle": "How could anyone know? I need to get out of here right now."
+            }
+          ]
+        }
+      }
+    },
+    "skip": {
+      "label": "Skip Review",
+      "kind": "offline_counterfactual",
+      "calls": 0,
+      "retries": 0,
+      "generationExecuted": false,
+      "metrics": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_tokens": null,
+        "total_tokens": 0,
+        "reference_cost_usd": 0,
+        "latency_ms": null
+      },
+      "parameters": null,
+      "usage": null,
+      "strategy": "manual-offline-skip",
+      "strategyVersion": null,
+      "callId": null,
+      "recordHash": null,
+      "startedAt": null,
+      "httpStatus": null,
+      "finishReason": null,
+      "parseStatus": "not_applicable",
+      "structureStatus": "valid",
+      "adopted": false,
+      "finalSource": "draft",
+      "snapshots": {
+        "R": null,
+        "F": {
+          "duration": 22,
+          "hash": "08c2f6c07cde19607ed7336288989667c79ff6754305a7afa80c5f805b6fd418",
+          "shots": [
+            {
+              "index": 1,
+              "durationSec": 4,
+              "summary": "The young woman walks alone under a clear umbrella along a wet campus pathway on a rainy night.",
+              "camera": "Medium tracking shot moving backward, eye level, slow smooth motion",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "It is freezing tonight."
+                }
+              ],
+              "subtitle": "It is freezing tonight."
+            },
+            {
+              "index": 2,
+              "durationSec": 6,
+              "summary": "Macro view of her smartphone screen buzzing with a sinister message from an unknown number.",
+              "camera": "Macro close-up, static camera with shallow focus racked to phone screen",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "Wait, who sent this?"
+                }
+              ],
+              "subtitle": "Wait, who sent this?"
+            },
+            {
+              "index": 3,
+              "durationSec": 4,
+              "summary": "Close-up of her face as cold realization and pure shock take over her expression.",
+              "camera": "Close-up, slow subtle push-in, low angle looking slightly up",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "How could anyone know?"
+                }
+              ],
+              "subtitle": "How could anyone know?"
+            },
+            {
+              "index": 4,
+              "durationSec": 8,
+              "summary": "She peers into the foggy distance, then abruptly turns and rushes away into the rain.",
+              "camera": "Medium-wide shot, slight pan and smooth lateral tracking following her sudden departure",
+              "dialogue": [
+                {
+                  "speaker": "Girl",
+                  "line": "I need to get out of here right now."
+                }
+              ],
+              "subtitle": "I need to get out of here right now."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "observer": {
+    "mode": "observe_only",
+    "cases": 29,
+    "directlyCaught": 6,
+    "hashInvalidated": 8,
+    "wrongApprovalCases": 2,
+    "wrongApprovalFalseSkips": 2,
+    "realWhitelistEntries": 0
+  },
+  "validation": {
+    "script2videoTests": 317,
+    "passed": 317,
+    "newCallsInShowcase": 0
+  }
+}
